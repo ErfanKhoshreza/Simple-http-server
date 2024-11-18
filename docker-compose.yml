@@ -18,3 +18,39 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+  app2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PORT=3000
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: any
+    ports:
+      - "8000:8000" # Map host port 3000 to container port 3000
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+  app3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PORT=3000
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: any
+    ports:
+      - "8000:8000" # Map host port 3000 to container port 3000
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+
