@@ -7,10 +7,6 @@ services:
       dockerfile: Dockerfile
     environment:
       - PORT=3000
-    deploy:
-      replicas: 3
-      restart_policy:
-        condition: any
     ports:
       - "8000:8000" # Map host port 3000 to container port 3000
     logging:
@@ -24,12 +20,8 @@ services:
       dockerfile: Dockerfile
     environment:
       - PORT=3000
-    deploy:
-      replicas: 3
-      restart_policy:
-        condition: any
     ports:
-      - "8000:8000" # Map host port 3000 to container port 3000
+      - "8001:8000" # Map host port 3000 to container port 3000
     logging:
       driver: json-file
       options:
@@ -41,12 +33,8 @@ services:
       dockerfile: Dockerfile
     environment:
       - PORT=3000
-    deploy:
-      replicas: 3
-      restart_policy:
-        condition: any
     ports:
-      - "8000:8000" # Map host port 3000 to container port 3000
+      - "8002:8000" # Map host port 3000 to container port 3000
     logging:
       driver: json-file
       options:
